@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'mystyle.css' %}">
+</head>
+<body>
+<h1>Home Page</h1>
+<img src = "{% static 'images/headphone.jpg' %}" width="200px" alt="img">
+<hr><hr>
+{% for post in posts %}
+<h3>{{post.title}}</h3>
+<img src = "{{post.image.url}}" width="200px" alt="img">
+
+{% endfor %}
+</body>
+</html>
