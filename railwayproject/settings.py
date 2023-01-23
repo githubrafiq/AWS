@@ -77,13 +77,8 @@ WSGI_APPLICATION = 'railwayproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'RAILWAY-DATA',
-        'USER': 'postgres',
-        'PASSWORD': 121995,
-        'HOST': 'localhost',
-        'PORT': 5432,
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -136,3 +131,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_ACCESS_KEY_ID = 'AKIAU4SLE5ZYTXHNBBOM'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'railwaydb'
+AWS_QUERYSTRING_AUTH = False
